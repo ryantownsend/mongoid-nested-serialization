@@ -48,7 +48,7 @@ User.find_by_json(json)
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Add your code and tests
-4. Run the full test suite (`bundle exec foreman start; bundle exec rake; bundle exec foreman stop`) and ensure it passes 100%
+4. Run the full test suite (`bundle exec rake`) and ensure it passes 100%
 5. Commit your changes (`git commit -am 'Added some feature'`)
 6. Push to the branch (`git push origin my-new-feature`)
 7. Create new Pull Request
