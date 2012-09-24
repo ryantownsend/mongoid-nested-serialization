@@ -11,7 +11,7 @@ module Mongoid
     
     module ClassMethods
       def find_by_json(json)
-        Mongoid::NestedSerialization::Finder.new(self).find(json)
+        Mongoid::NestedSerialization::Finder.find(json)
       end
     end
     
