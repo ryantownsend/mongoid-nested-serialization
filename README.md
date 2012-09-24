@@ -2,6 +2,11 @@
 
 Loads nested Mongoid documents using JSON serialization.
 
+[![Build Status][2]][1]
+
+  [1]: http://travis-ci.org/ryantownsend/mongoid-nested-serialization
+  [2]: https://secure.travis-ci.org/ryantownsend/mongoid-nested-serialization.png?branch=master
+
 ## Installation
 
 Add this line to your application's Gemfile:
