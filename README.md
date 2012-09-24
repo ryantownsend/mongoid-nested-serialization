@@ -7,7 +7,7 @@ Loads nested Mongoid documents using JSON serialization.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "mongoid-nested-serialization", require: "mongoid/nested_serialization"
+gem "mongoid-nested-serialization"
 ```
 
 And then execute:
