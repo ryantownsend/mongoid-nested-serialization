@@ -16,19 +16,23 @@ module Mongoid
 
       # spits out a hash which can be used to relocate
       # the object in the collection tree
-      def to_hash
+      def to_hash(embedded_contents = nil)
         if object.embedded?
           # select the relation for the parent object
           parent_relation = object.relations.select do |k,v|
             v.macro == :embedded_in && v.class_name == object._parent.class.name
           end.values.first
           # embed this in the parent's hash
-          self.class.new(object._parent).to_hash.merge(embedded: {
+          result = {
             association: parent_relation.inverse_of,
             id: object.id
-          })
+          }
+          result = result.merge(embedded: embedded_contents) if embedded_contents
+          self.class.new(object._parent).to_hash(result)
         else # !embedded?
-          { class_name: object.class.name, id: object.id }
+          result = { class_name: object.class.name, id: object.id }
+          result[:embedded] = embedded_contents if embedded_contents
+          result
         end
       end
       
