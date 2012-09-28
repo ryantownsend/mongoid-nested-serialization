@@ -3,21 +3,6 @@ require "multi_json"
 module Mongoid
   module NestedSerialization
     class Finder
-      # parse the raw JSON data into a hash
-      def self.parse_input(json)
-        MultiJson.load(json)
-      end
-      
-      # load the top level object directly with the collection
-      def self.top_level_object(data)
-        data["class_name"].constantize.find(data["id"])
-      end
-      
-      # load an object nested within another, using the data
-      def self.nested_object(object, data)
-        object.send(data["association"]).find(data["id"])
-      end
-
       def self.find(json)
         data = parse_input(json)
         # load the top level object
@@ -31,6 +16,22 @@ module Mongoid
         end
         # once at the bottom, return the object
         object
+      end
+      
+      private
+      # parse the raw JSON data into a hash
+      def self.parse_input(json)
+        MultiJson.load(json)
+      end
+      
+      # load the top level object directly with the collection
+      def self.top_level_object(data)
+        data["class_name"].constantize.find(data["id"])
+      end
+      
+      # load an object nested within another, using the data
+      def self.nested_object(object, data)
+        object.send(data["association"]).find(data["id"])
       end
     end
   end
