@@ -1,4 +1,3 @@
-require "mongoid/nested_serialization/core_ext"
 require "mongoid/nested_serialization/finder"
 require "mongoid/nested_serialization/serializer"
 
