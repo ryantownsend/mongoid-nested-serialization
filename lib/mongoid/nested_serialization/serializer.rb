@@ -1,3 +1,4 @@
+require "mongoid/nested_serialization"
 require "multi_json"
 
 module Mongoid
