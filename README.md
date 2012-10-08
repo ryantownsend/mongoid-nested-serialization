@@ -2,10 +2,12 @@
 
 Loads nested Mongoid documents using JSON serialization.
 
-[![Build Status][2]][1]
+[![Build Status][2]][1] [![Code Climate][3]][4]
 
   [1]: http://travis-ci.org/ryantownsend/mongoid-nested-serialization
   [2]: https://secure.travis-ci.org/ryantownsend/mongoid-nested-serialization.png?branch=master
+  [3]: https://codeclimate.com/badge.png
+  [4]: https://codeclimate.com/github/ryantownsend/mongoid-nested-serialization
 
 ## Installation
 
